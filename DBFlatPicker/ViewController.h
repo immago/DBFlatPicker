@@ -14,6 +14,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet FlatPickerView *picker;
+@property (weak, nonatomic) IBOutlet UILabel *selectedRowLabel;
 
 @end
 

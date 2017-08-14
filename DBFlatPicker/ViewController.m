@@ -26,7 +26,8 @@
 }
 
 - (void)flatPickerView:(FlatPickerView*)flatPickerView didSelectRow:(NSInteger)row {
-    NSLog(@"selected row is = %d", row);
+    NSLog(@"selected row = %ld", (long)row);
+    self.selectedRowLabel.text = [NSString stringWithFormat:@"Selected row = %ld", (long)row];
 }
 
 - (CGFloat)rowHeightForFlatPickerView:(FlatPickerView *)flatPickerView {

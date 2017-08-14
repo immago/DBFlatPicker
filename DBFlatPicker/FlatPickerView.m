@@ -9,10 +9,20 @@
 
 #define CELL_LABEL_TAG 100
 
+
 @implementation FlatPickerView
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+#pragma mark - Init
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         [self setup];
@@ -30,13 +40,9 @@
 
 -(void)setup {
     
-    // 1. load the interface
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
-    // 2. add as subview
     [self addSubview:self.view];
-    // 3. allow for autolayout
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    // 4. add constraints to span entire view
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view":self.view}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view":self.view}]];
     
@@ -45,10 +51,7 @@
     self.tableView.decelerationRate = UIScrollViewDecelerationRateFast;
 }
 
-- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    // Pass all touches to table view
-    return self.tableView;
-}
+#pragma mark - Public methods & setters
 
 - (void)selectRow:(NSInteger)row {
     CGFloat rowHeight = [self.delegate rowHeightForFlatPickerView:self];
