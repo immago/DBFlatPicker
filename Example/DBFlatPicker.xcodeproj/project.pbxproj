@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5B0E0451F45EF9700CE8597 /* FlatPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B0E0431F45EF9700CE8597 /* FlatPickerView.m */; };
+		C5B0E0461F45EF9700CE8597 /* FlatPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B0E0441F45EF9700CE8597 /* FlatPickerView.xib */; };
 		C5E79F871F000A3B00F52532 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E79F861F000A3B00F52532 /* main.m */; };
 		C5E79F8A1F000A3B00F52532 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E79F891F000A3B00F52532 /* AppDelegate.m */; };
 		C5E79F8D1F000A3B00F52532 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E79F8C1F000A3B00F52532 /* ViewController.m */; };
 		C5E79F901F000A3B00F52532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E79F8E1F000A3B00F52532 /* Main.storyboard */; };
 		C5E79F921F000A3B00F52532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E79F911F000A3B00F52532 /* Assets.xcassets */; };
 		C5E79F951F000A3B00F52532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E79F931F000A3B00F52532 /* LaunchScreen.storyboard */; };
-		C5E79F9E1F000A7300F52532 /* FlatPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E79F9D1F000A7300F52532 /* FlatPickerView.m */; };
-		C5E79FA01F000EC900F52532 /* FlatPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E79F9F1F000EC900F52532 /* FlatPickerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5B0E0421F45EF9700CE8597 /* FlatPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlatPickerView.h; path = ../../Classes/FlatPickerView.h; sourceTree = "<group>"; };
+		C5B0E0431F45EF9700CE8597 /* FlatPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlatPickerView.m; path = ../../Classes/FlatPickerView.m; sourceTree = "<group>"; };
+		C5B0E0441F45EF9700CE8597 /* FlatPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlatPickerView.xib; path = ../../Classes/FlatPickerView.xib; sourceTree = "<group>"; };
 		C5E79F821F000A3B00F52532 /* DBFlatPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBFlatPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E79F861F000A3B00F52532 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5E79F881F000A3B00F52532 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,9 +31,6 @@
 		C5E79F911F000A3B00F52532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5E79F941F000A3B00F52532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5E79F961F000A3B00F52532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5E79F9C1F000A7300F52532 /* FlatPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatPickerView.h; sourceTree = "<group>"; };
-		C5E79F9D1F000A7300F52532 /* FlatPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatPickerView.m; sourceTree = "<group>"; };
-		C5E79F9F1F000EC900F52532 /* FlatPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlatPickerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +88,9 @@
 		C5E79FA61F001A2600F52532 /* FlatPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				C5E79F9C1F000A7300F52532 /* FlatPickerView.h */,
-				C5E79F9D1F000A7300F52532 /* FlatPickerView.m */,
-				C5E79F9F1F000EC900F52532 /* FlatPickerView.xib */,
+				C5B0E0421F45EF9700CE8597 /* FlatPickerView.h */,
+				C5B0E0431F45EF9700CE8597 /* FlatPickerView.m */,
+				C5B0E0441F45EF9700CE8597 /* FlatPickerView.xib */,
 			);
 			name = FlatPickerView;
 			sourceTree = "<group>";
@@ -154,10 +154,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B0E0461F45EF9700CE8597 /* FlatPickerView.xib in Resources */,
 				C5E79F951F000A3B00F52532 /* LaunchScreen.storyboard in Resources */,
 				C5E79F921F000A3B00F52532 /* Assets.xcassets in Resources */,
 				C5E79F901F000A3B00F52532 /* Main.storyboard in Resources */,
-				C5E79FA01F000EC900F52532 /* FlatPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +171,7 @@
 				C5E79F8D1F000A3B00F52532 /* ViewController.m in Sources */,
 				C5E79F8A1F000A3B00F52532 /* AppDelegate.m in Sources */,
 				C5E79F871F000A3B00F52532 /* main.m in Sources */,
-				C5E79F9E1F000A7300F52532 /* FlatPickerView.m in Sources */,
+				C5B0E0451F45EF9700CE8597 /* FlatPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +339,7 @@
 				C5E79F9B1F000A3B00F52532 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
