@@ -81,6 +81,10 @@
     selectionHeightConstraint.constant = rowHeight;
 }
 
+-(void)reloadData {
+    [tableView reloadData];
+}
+
 #pragma mark - UITableViewDelegate functions
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -40,6 +40,9 @@
 /// Selects row
 - (void)selectRow:(NSInteger)row;
 
+// Reload data
+- (void)reloadData;
+
 @end
 
 
