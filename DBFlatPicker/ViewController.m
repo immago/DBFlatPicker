@@ -12,37 +12,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    pickerData = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 6", @"Item 7", @"Item 8", @"Item 9", @"Item 10"];
+    colors = @[[UIColor lightGrayColor], [UIColor greenColor], [UIColor whiteColor],
+               [UIColor cyanColor], [UIColor orangeColor], [UIColor magentaColor],
+               [UIColor redColor], [UIColor blueColor], [UIColor brownColor], [UIColor grayColor]];
+    
+    // picker
+    self.picker.data = @[@"light gray", @"green", @"white", @"cyan", @"orange", @"magenta", @"red", @"blue", @"brown", @"gray"];
     self.picker.delegate = self;
-    self.picker.dataSource = self;
-    [self.picker selectRow:3];
+    [self.picker selectRow:2];
 }
 
 
 #pragma mark - FlatPickerViewDelegate
 
-- (NSString *)flatPickerView:(FlatPickerView *)flatPickerView titleForRow:(NSInteger)row {
-    return [pickerData objectAtIndex:row];
-}
 
 - (void)flatPickerView:(FlatPickerView*)flatPickerView didSelectRow:(NSInteger)row {
     NSLog(@"selected row = %ld", (long)row);
-    self.selectedRowLabel.text = [NSString stringWithFormat:@"Selected row = %ld", (long)row];
-}
-
-- (CGFloat)rowHeightForFlatPickerView:(FlatPickerView *)flatPickerView {
-    return 60.0;
+    self.selectedRowLabel.text = [NSString stringWithFormat:@"%@ color\n(row = %ld)", self.picker.data[row], (long)row];
+    self.view.backgroundColor = colors[row];
 }
 
 - (void)labelStyleForFlatPickerView:(FlatPickerView*)flatPickerView forLabel:(UILabel*)label {
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:20];
-}
-
-#pragma mark - FlatPickerViewDataSource
-
-- (NSInteger)numberOfRowsInFlatPickerView:(FlatPickerView*)flatPickerView {
-    return [pickerData count];
 }
 
 @end

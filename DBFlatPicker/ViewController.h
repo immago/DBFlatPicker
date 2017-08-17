@@ -8,9 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "FlatPickerView.h"
 
-@interface ViewController : UIViewController <FlatPickerViewDelegate, FlatPickerViewDataSource>
+@interface ViewController : UIViewController <FlatPickerViewDelegate>
 {
-    NSArray *pickerData;
+    NSArray *colors;
 }
 
 @property (weak, nonatomic) IBOutlet FlatPickerView *picker;
