@@ -23,16 +23,16 @@
 }
 
 
-#pragma mark - FlatPickerViewDelegate
+#pragma mark - DBFlatPickerViewDelegate
 
 
-- (void)flatPickerView:(FlatPickerView*)flatPickerView didSelectRow:(NSInteger)row {
+- (void)flatPickerView:(DBFlatPickerView*)flatPickerView didSelectRow:(NSInteger)row {
     NSLog(@"selected row = %ld", (long)row);
     self.selectedRowLabel.text = [NSString stringWithFormat:@"%@ color\n(row = %ld)", self.picker.data[row], (long)row];
     self.view.backgroundColor = colors[row];
 }
 
-- (void)labelStyleForFlatPickerView:(FlatPickerView*)flatPickerView forLabel:(UILabel*)label {
+- (void)labelStyleForFlatPickerView:(DBFlatPickerView*)flatPickerView forLabel:(UILabel*)label {
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:20];
 }

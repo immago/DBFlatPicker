@@ -1,16 +1,16 @@
 //
-//  FlatPickerView.m
+//  DBFlatPickerView.m
 //  DBFlatPicker
 //
 //  Created by Dmitry Byankin on 25.06.17.
 //
 
-#import "FlatPickerView.h"
+#import "DBFlatPickerView.h"
 
 #define CELL_LABEL_TAG 100
 
 
-@implementation FlatPickerView
+@implementation DBFlatPickerView
 
 #pragma mark - Init
 

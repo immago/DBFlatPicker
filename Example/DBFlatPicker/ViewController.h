@@ -6,14 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FlatPickerView.h"
+#import "DBFlatPickerView.h"
 
-@interface ViewController : UIViewController <FlatPickerViewDelegate>
+@interface ViewController : UIViewController <DBFlatPickerViewDelegate>
 {
     NSArray *colors;
 }
 
-@property (weak, nonatomic) IBOutlet FlatPickerView *picker;
+@property (weak, nonatomic) IBOutlet DBFlatPickerView *picker;
 @property (weak, nonatomic) IBOutlet UILabel *selectedRowLabel;
 
 @end
