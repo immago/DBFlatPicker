@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.author           = { 'Dmitry Byankin' => 'the.immago@gmail.com' }
   s.source           = { :git => 'https://github.com/immago/DBFlatPicker.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Classes/**/*.{h,m}'
   s.resources = ["Classes/DBFlatPickerView.xib"]
 end
