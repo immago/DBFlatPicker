@@ -11,15 +11,18 @@
 @protocol FlatPickerViewDelegate;
 
 @interface FlatPickerView : UIView <UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, weak) IBOutlet UIView *view;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, weak) IBOutlet UIView *selectionOverlayView;
+{
+    __weak IBOutlet UIView *view;
+    __weak IBOutlet UITableView *tableView;
+    __weak IBOutlet UIView *selectionOverlayView;
+    __weak IBOutlet NSLayoutConstraint *selectionHeightConstraint;
+}
 
 @property (nonatomic) NSArray <NSString*> *data;
 @property (nonatomic) IBInspectable CGFloat paddingLeft;
 @property (nonatomic) IBInspectable CGFloat paddingRight;
 @property (nonatomic) IBInspectable CGFloat rowHeight;
+@property (nonatomic) IBInspectable UIColor *selectionColor;
 @property (nonatomic, weak) id <FlatPickerViewDelegate> delegate;
 
 - (void)selectRow:(NSInteger)row;

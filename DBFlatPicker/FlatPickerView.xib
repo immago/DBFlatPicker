@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlatPickerView">
             <connections>
+                <outlet property="selectionHeightConstraint" destination="GdA-vA-Nbb" id="Nho-OF-Pbb"/>
                 <outlet property="selectionOverlayView" destination="Jdd-Ty-vBK" id="mg8-A7-Hgg"/>
                 <outlet property="tableView" destination="gkV-7k-9a4" id="72Q-mi-fvA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jK3-jA-NXv"/>

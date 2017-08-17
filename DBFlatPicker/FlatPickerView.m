@@ -41,15 +41,15 @@
 -(void)setup {
     
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
-    [self addSubview:self.view];
-    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view":self.view}]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view":self.view}]];
+    [self addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view":view}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view":view}]];
     
     self.data = [[NSArray alloc]init];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.decelerationRate = UIScrollViewDecelerationRateFast;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.decelerationRate = UIScrollViewDecelerationRateFast;
     
     self.rowHeight = 60.f;
     self.paddingLeft = 0;
@@ -59,16 +59,26 @@
 #pragma mark - Public methods & setters
 
 - (void)selectRow:(NSInteger)row {
-    [self.tableView setContentOffset:CGPointMake(0.0, row * self.rowHeight)];
+    [tableView setContentOffset:CGPointMake(0.0, row * self.rowHeight)];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    self.tableView.backgroundColor = backgroundColor;
+    tableView.backgroundColor = backgroundColor;
 }
 
 -(void)setData:(NSArray<NSString *> *)data {
     _data = data;
-    [self.tableView reloadData];
+    [tableView reloadData];
+}
+
+-(void)setSelectionColor:(UIColor *)selectionColor {
+    _selectionColor = selectionColor;
+    selectionOverlayView.backgroundColor = selectionColor;
+}
+
+-(void)setRowHeight:(CGFloat)rowHeight {
+    _rowHeight = rowHeight;
+    selectionHeightConstraint.constant = rowHeight;
 }
 
 #pragma mark - UITableViewDelegate functions
@@ -77,10 +87,10 @@
     return self.data.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"FlatPickerViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     UILabel *textLabel;
     if (!cell) {
@@ -105,7 +115,7 @@
     }
     
     textLabel.frame = CGRectMake(self.paddingLeft,
-                                 (indexPath.row == 0) ? self.selectionOverlayView.frame.origin.y : 0.0,
+                                 (indexPath.row == 0) ? selectionOverlayView.frame.origin.y : 0.0,
                                  self.frame.size.width - self.paddingLeft - self.paddingRight,
                                  self.rowHeight);
     return cell;
@@ -115,10 +125,10 @@
 
     // Top and bottom padding
     if (indexPath.row == 0) {
-        return (self.selectionOverlayView.frame.origin.y + self.rowHeight);
+        return (selectionOverlayView.frame.origin.y + self.rowHeight);
         
     } else if (indexPath.row == self.data.count - 1) {
-        return (self.selectionOverlayView.frame.origin.y + self.rowHeight);
+        return (selectionOverlayView.frame.origin.y + self.rowHeight);
     }
     return self.rowHeight;
 }
