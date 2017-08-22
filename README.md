@@ -1,7 +1,7 @@
 # DBFlatPicker
 [![podver](https://img.shields.io/cocoapods/v/DBFlatPicker.png)](https://cocoapods.org/pods/DBFlatPicker) [![platform](https://img.shields.io/cocoapods/p/DBFlatPicker.png)](https://cocoapods.org/pods/DBFlatPicker) [![license](https://img.shields.io/cocoapods/l/DBFlatPicker.png)](https://cocoapods.org/pods/DBFlatPicker)
 
-Flat picker for iOS written on Objective-C
+Flat picker for iOS written on Objective-C. It's UIView with UITableView inside, with behavior of UIPickerView.
 
 ![dbflatpicker](https://user-images.githubusercontent.com/5740772/29422075-bc3404a6-837f-11e7-9c2e-fd54a90567a0.gif)
 
